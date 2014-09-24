@@ -1,18 +1,15 @@
 language: ruby
 rvm:
 - 2.1.2
-# - 1.9.3
-# - jruby-19mode
-# - rbx-2
 deploy:
   provider: heroku
   api_key:
-    secure: r5IrpUJnU6UdVcmLs5nIywXZcZS7Hzmg5Q3rFGvKFr9K7wzP5UOilKY5OoIdLc2AShb+wLzqtOioAMbSAzrWHqfMxVmJi0aYrkYtYXDQwowRzu47LvrPB0TjnQnyxjGZ2ZWg/7nHFmS0q8p8d/o7Pl32HcOvG4GXwWhcrWMmTBg=
+    secure: UAR2OzBKWZjqwkFIFfu9oLgUYn9Fm/lHNxjIW62kcf1pyixcI5Le6ObwuS9APaSNhMHYyi+MjiUwLNB+5aSPZTJNz60BFiCvZKuHZtxXB9V47OlwKSOsajH2eKgqvm/8u79f67xbyh2F9VXDEmYyhL/gzYnfdj7I/W7D0DINJuU=
   app: evening-earth-7918
   on:
     repo: omoto/rails_enpit
 addons:
-  postgresql: "9.3"
+  postgresql: '9.3'
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
